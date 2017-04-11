@@ -52,4 +52,12 @@ public class StudentDao {
     public void deleteStudentById(int id) {
         this.students.remove(id);
     }
+
+    public Student updateStudentById(Student student){
+        Student s = this.students.get(student.getId());
+        s.setCourse(student.getCourse());
+        s.setName(student.getName());
+        this.students.put(s.getId(), s);
+        return  student;
+    }
 }
