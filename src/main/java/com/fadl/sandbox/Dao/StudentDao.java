@@ -49,4 +49,7 @@ public class StudentDao {
     }
 
 
+    public void deleteStudentById(int id) {
+        this.students.remove(id);
+    }
 }

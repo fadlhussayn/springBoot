@@ -21,8 +21,12 @@ public class StudentService {
     }
 
     public Student getStudentById(int id){
-        this.studentDao.checkStudentById(id);
+        //this.studentDao.checkStudentById(id);
         return this.studentDao.getStudentById(id);
     }
 
+
+    public void deleteStudentById(int id) {
+        this.studentDao.deleteStudentById(id);
+    }
 }
