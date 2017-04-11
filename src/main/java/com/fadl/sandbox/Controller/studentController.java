@@ -4,11 +4,9 @@ import com.fadl.sandbox.Entity.Student;
 import com.fadl.sandbox.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
+import org.springframework.http.MediaType;
 import org.springframework.web.HttpRequestHandler;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -40,6 +38,12 @@ public class studentController {
         this.studentService.deleteStudentById(id);
 
         return "Removed";
+    }
+
+    @RequestMapping(method = RequestMethod.PUT,consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Student updateStudentById(@RequestBody Student student){
+        this.studentService.updateStudentById(student);
+        return  student;
     }
 
 }
