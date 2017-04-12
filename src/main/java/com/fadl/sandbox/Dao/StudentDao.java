@@ -60,4 +60,9 @@ public class StudentDao {
         this.students.put(s.getId(), s);
         return  student;
     }
+
+    public Student addStudent(Student student) {
+        this.students.put(student.getId(), student);
+        return student;
+    }
 }
