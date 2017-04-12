@@ -1,8 +1,10 @@
 package com.fadl.sandbox.Service;
 
+import com.fadl.sandbox.Dao.FakeStudentDaoImpl;
 import com.fadl.sandbox.Dao.StudentDao;
 import com.fadl.sandbox.Entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -14,6 +16,7 @@ import java.util.Collection;
 public class StudentService {
 
     @Autowired
+    @Qualifier("mangoData")
     private StudentDao studentDao;
 
     public Collection<Student> getAllStudents(){
