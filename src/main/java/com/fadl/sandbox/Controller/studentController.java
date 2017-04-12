@@ -46,4 +46,10 @@ public class studentController {
         return  student;
     }
 
+    @RequestMapping(method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Student addStudent(@RequestBody Student student){
+        this.studentService.addStudent(student);
+        return  student;
+    }
+
 }

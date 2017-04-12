@@ -34,4 +34,9 @@ public class StudentService {
         this.studentDao.updateStudentById(student);
         return  student;
     }
+
+    public Student addStudent(Student student) {
+        this.studentDao.addStudent(student);
+        return student;
+    }
 }
