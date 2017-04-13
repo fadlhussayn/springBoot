@@ -16,7 +16,7 @@ import java.util.Collection;
 public class StudentService {
 
     @Autowired
-    @Qualifier("mangoData")
+    @Qualifier("mysqlData")
     private StudentDao studentDao;
 
     public Collection<Student> getAllStudents(){
